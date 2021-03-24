@@ -62,6 +62,7 @@ def collect(args):
 
         if "action" not in h5.keys():
             # rides, steps, (velocity, steering, accel, should_turn_left, should_turn_right, stripped_line, contains_data)
+            # Collecting as much data as we can as it may be needed in future.
             # - contains_data -> is 0, this is just a filler data
             # - steps=7*80=560
             out_dataset = h5.create_dataset("action",
