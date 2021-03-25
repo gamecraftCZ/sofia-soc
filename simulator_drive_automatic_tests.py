@@ -6,8 +6,7 @@ import random
 import cv2
 import numpy as np
 from tensorflow.python.keras import Model
-from utils import get_model
-
+from utils import get_model, model_predict
 
 ### Fix "Could not create cudnn handle: CUDNN_STATUS_NOT_INITIALIZED" if something else is also using GPU memory ###
 import tensorflow as tf
@@ -43,7 +42,6 @@ def test_model(args):
 
     model_name = os.path.basename(args.model_path).replace(".h5", "")
     model_folder = os.path.dirname(args.model_path)
-    # rnd = random.Random(1)   # We want random numbers identical for all models
     model = get_model(model_name, model_folder)
 
     ### Create environment ###
@@ -190,23 +188,6 @@ def test_drive(env, model,
     return crashes, bad_lines
 
 
-def model_predict(model: Model, image: np.ndarray, should_turn_left: bool, should_turn_right: bool):
-    # image = obs["image"]  # 160x120px
-    image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
-    image = cv2.flip(image, 1)
-    image = image[36:, :]  # 160x84px
-
-    turns_input = model.input_shape[1][0][2]
-    if turns_input == 2:
-        should_turns = [1 if should_turn_left else 0, 1 if should_turn_right else 0]
-    else:
-        should_turns = -1 if should_turn_left else 1 if should_turn_right else 0
-    to_pred = [[np.array([[image]]), np.array([[should_turns]])]]
-
-    pred = model.predict(to_pred)[0] / 20
-    return pred
-
-
 latest_position = -0.5
 # Target line 0=left, 1=center, 2=right
 def drive_straight(env, model, target_line: int, steps: int):
@@ -255,7 +236,7 @@ def _calculate_target_steer(position_from_center_line, target_line: int, latest_
 
 def main():
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description='Simulator drive tests for trained models.')
+    parser = argparse.ArgumentParser(description='Simulator drive automatic tests for trained models.')
 
     # --- #
     parser.add_argument('-m', dest='model_path', type=str, required=True,
