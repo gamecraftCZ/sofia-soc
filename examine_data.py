@@ -119,7 +119,7 @@ def examine(args):
 
 def main():
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description='Data collection for Sofia experiment. To exit when running press X.')
+    parser = argparse.ArgumentParser(description='Examine collected data')
 
     # --- #
     parser.add_argument('-d', dest='data_file', type=str, default='datasets/collected_data.h5',

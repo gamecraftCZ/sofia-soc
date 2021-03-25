@@ -254,7 +254,7 @@ def main():
     parser = argparse.ArgumentParser(description='Data collection for Sofia experiment. To exit when running press X.')
 
     # --- #
-    parser.add_argument('-m', dest='collection_method', type=str, default='a',
+    parser.add_argument('-m', dest='collection_method', type=str, default='a', choices=["a", "j", "k"],
                               help='Method of data collection'
                                    ' (a=automatic, j=manual_using_ps4_controller, k=manual_using_keyboard)')
     parser.add_argument('-d', dest='data_file', type=str, default='datasets/collected_data.h5',
