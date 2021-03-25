@@ -4,10 +4,10 @@ English version below.
 
 - Tento repozitář obsahuje kódy k replikaci experimentů, které jsem dělal v rámci
   mé [Středoškolské Odborné Činnosti](https://www.soc.cz).
-- Text práce je součástí
-  repozitáře: [SOCka_SofiaAI_Patrik_Vacal.pdf](SOCka_SofiaAI_Patrik_Vacal.pdf)
-  
-- Upravená verze PGDrive je k dispozici na mém githubu: https://github.com/gamecraftCZ/pgdrive
+- Text práce je součástí repozitáře: [SOCka_SofiaAI_Patrik_Vacal.pdf](SOCka_SofiaAI_Patrik_Vacal.pdf)
+
+- Upravená verze PGDrive je k dispozici na mém
+  githubu: [https://github.com/gamecraftCZ/pgdrive](https://github.com/gamecraftCZ/pgdrive)
 
 ### Příprava prostředí
 
