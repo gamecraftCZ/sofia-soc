@@ -14,7 +14,7 @@ import tensorflow as tf
 physical_devices = tf.config.experimental.list_physical_devices('GPU')
 assert len(physical_devices) > 0, "Not enough GPU hardware devices available"
 config = tf.config.experimental.set_memory_growth(physical_devices[0], True)
-######
+### ###
 
 
 estimate_start = 0
@@ -116,11 +116,11 @@ def test_model(args):
 
     with open(f"{model_folder}/{model_name}.results.txt", "w+") as f:
         f.write(f"  Model: {model_name}")
-        f.write(f"")
-        f.write(f"Results: ")
-        f.write(f"     out_of_road / line_changes_without_order / one_step_order / three_step_order / five_step_order")
-        f.write(f"            : {results}")
-        f.write(f"out of total: {args.rides_count} / {rides_per_test*3} / {rides_per_test*4} / {rides_per_test*4} / {rides_per_test*4}")
+        f.write(f"\n")
+        f.write(f"\nResults:")
+        f.write(f" out_of_road / line_changes_without_order / one_step_order / three_step_order / five_step_order")
+        f.write(f"\n\n     results: {results}")
+        f.write(f"\nout of total: {args.rides_count} / {rides_per_test*3} / {rides_per_test*4} / {rides_per_test*4} / {rides_per_test*4}")
 
 
     print(f'[INFO] Results saved to "{model_folder}/{model_name}.results.txt"')
@@ -138,7 +138,7 @@ def test_drive(env, model,
     bad_lines = 0
 
     for i in range(steps):
-        step_size = 1 / 15 / steps
+        step_size = 1 / steps
         print(f"Estimated time to finish: {get_estimated_time(already_done, already_done+step_size, 15)} seconds")
         already_done += step_size
 
