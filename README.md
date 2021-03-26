@@ -29,7 +29,6 @@ English version below.
 - Vytvořený dataset je třeba nahrát na Google Drive
 - Trénink jsem provedl ve službě Google Colab (train.ipynb)
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gamecraftCZ/sofia-soc/blob/master/train.ipynb)
-- ***TODO markdown to training iPython notebook***
 
 ### Test sítě
 
