@@ -17,6 +17,29 @@ English version below.
     - GPU: `pip install -r requirements-gpu.txt`
 - Při použití verze GPU je nutná instalace CUDA 11.0 a cuDNN 8.0
 
+### Sběr trénovacích dat
+
+- Automatický sběr
+    - `python collect_data.py -m a`
+- Manuální sběr
+    - `python collect_data.py -m k`
+
+### Trénink sítě
+
+- Nahrát trénovací dataset na googledrive
+- Trénink jsem provedl ve službě Google Colab
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gamecraftCZ/sofia-soc/blob/master/train.ipynb)
+- ***TODO markdown to training iPython notebook***
+
+### Test sítě
+
+- Automatický test
+    - `python simulator_drive_automatic_tests.py -m CESTA_K_MODELU`
+- Manuální test
+    - `python simulator_drive_manual-tests.py -m CESTA_K_MODELU`
+
+---
+
 # Sofia – neural network inspired by Caenorhabditis elegans and possibilities of its control
 
-- TODO
+- ***TODO english***
