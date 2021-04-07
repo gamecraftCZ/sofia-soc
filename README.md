@@ -1,4 +1,4 @@
-English version below.
+English version follows.
 
 # Sofie – neuronová síť inspirovaná háďátkem obecným a možnosti její kontroly
 
@@ -36,6 +36,12 @@ English version below.
     - `python simulator_drive_automatic_tests.py -m CESTA_K_MODELU`
 - Manuální test
     - `python simulator_drive_manual-tests.py -m CESTA_K_MODELU`
+
+### Řešení možnách problémů
+
+- PGDrive hlásí `UnicodeDecodeError: 'cp950' codec can't decode byte 0x8d in position 49100: illegal multibyte sequence`
+    - Řešení: Přepnout Windows encoding do módu UTF-8
+    - Github issue: https://github.com/decisionforce/pgdrive/issues/251
 
 ---
 
@@ -76,3 +82,9 @@ English version below.
 - Manual test
     - `python simulator_drive_manual-tests.py -m CESTA_K_MODELU`
 
+### Troubleshooting
+
+- PGDrive crashes
+  with `UnicodeDecodeError: 'cp950' codec can't decode byte 0x8d in position 49100: illegal multibyte sequence`
+    - Solution: Switch Windows encoding to UTF-8
+    - See Github issue: https://github.com/decisionforce/pgdrive/issues/251
