@@ -38,7 +38,7 @@ English version follows.
 
 ![Video jízdy](sofia_drive-speed-arrows.gif)
 
-### Řešení možnách problémů
+### Řešení možných problémů
 
 - PGDrive hlásí `UnicodeDecodeError: 'cp950' codec can't decode byte 0x8d in position 49100: illegal multibyte sequence`
     - Řešení: Přepnout Windows encoding do módu UTF-8
