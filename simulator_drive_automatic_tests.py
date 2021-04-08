@@ -3,9 +3,6 @@ import os
 import time
 import pgdrive
 import random
-import cv2
-import numpy as np
-from tensorflow.python.keras import Model
 from utils import get_model, model_predict
 
 ### Fix "Could not create cudnn handle: CUDNN_STATUS_NOT_INITIALIZED" if something else is also using GPU memory ###

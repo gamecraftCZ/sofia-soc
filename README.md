@@ -5,7 +5,6 @@ English version follows.
 - Tento repozitář obsahuje kódy k replikaci experimentů, které jsem dělal v rámci
   mé [Středoškolské Odborné Činnosti](https://www.soc.cz).
 - Text práce je součástí repozitáře: [SOCka_SofiaAI_Patrik_Vacal.pdf](SOCka_SofiaAI_Patrik_Vacal.pdf)
-
 - Upravená verze PGDrive je k dispozici na mém
   githubu: [https://github.com/gamecraftCZ/pgdrive](https://github.com/gamecraftCZ/pgdrive)
 
@@ -33,15 +32,26 @@ English version follows.
 ### Test sítě
 
 - Automatický test
-    - `python simulator_drive_automatic_tests.py -m CESTA_K_MODELU`
+    - `python simulator_drive_automatic_tests.py -m <CESTA_K_MODELU>`
 - Manuální test
-    - `python simulator_drive_manual-tests.py -m CESTA_K_MODELU`
+    - `python simulator_drive_manual-tests.py -m <CESTA_K_MODELU>`
+
+![Video jízdy](sofia_drive-speed-arrows.gif)
 
 ### Řešení možnách problémů
 
 - PGDrive hlásí `UnicodeDecodeError: 'cp950' codec can't decode byte 0x8d in position 49100: illegal multibyte sequence`
     - Řešení: Přepnout Windows encoding do módu UTF-8
     - Github issue: https://github.com/decisionforce/pgdrive/issues/251
+
+### BONUS: Řízení pomocí hlasu
+
+1. Spustíme simulátor
+    - `python simulator_drive_siri.py -m <CESTA_K_MODELU>`
+2. Pro IOS nastavíme Shortcut tak, aby poslal request na: `http://<ip_počítače>:<port>/<zatočení>`
+    - Např: `http://192.198.101.61:2002/left`
+3. Užívejte jízdu!
+    - Ukázka: https://youtu.be/6lJG2cZftH8
 
 ---
 
@@ -78,9 +88,11 @@ English version follows.
 ### Test of trained network
 
 - Automatic test
-    - `python simulator_drive_automatic_tests.py -m CESTA_K_MODELU`
+    - `python simulator_drive_automatic_tests.py -m <PATH_TO_MODEL>`
 - Manual test
-    - `python simulator_drive_manual-tests.py -m CESTA_K_MODELU`
+    - `python simulator_drive_manual-tests.py -m <PATH_TO_MODEL>`
+
+![Ride video](sofia_drive-speed-arrows.gif)
 
 ### Troubleshooting
 
@@ -88,3 +100,13 @@ English version follows.
   with `UnicodeDecodeError: 'cp950' codec can't decode byte 0x8d in position 49100: illegal multibyte sequence`
     - Solution: Switch Windows encoding to UTF-8
     - See Github issue: https://github.com/decisionforce/pgdrive/issues/251
+
+### BONUS: Voice control
+
+1. Start simulator
+    - `python simulator_drive_siri.py -m <PATH_TO_MODEL>`
+2. For IOS create Shortcut that sends request to: `http://<computer_ip>:<port>/<turn>`
+    - eg. `http://192.198.101.61:2002/left`
+3. Enjoy ride!
+    - Demonstration: https://youtu.be/6lJG2cZftH8
+  

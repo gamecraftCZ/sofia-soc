@@ -1,19 +1,14 @@
 import argparse
 import os
 from time import sleep
-
-import pgdrive  # Import this package to register the environment!
+import pgdrive
 import random
-import cv2
 import numpy as np
 from keyboard import is_pressed
-from tensorflow import keras
+from utils import get_model, model_predict
 
 ### Fix "Could not create cudnn handle: CUDNN_STATUS_NOT_INITIALIZED" if something else is also using GPU memory ###
 import tensorflow as tf
-
-from utils import get_model, model_predict
-
 physical_devices = tf.config.experimental.list_physical_devices('GPU')
 assert len(physical_devices) > 0, "Not enough GPU hardware devices available"
 config = tf.config.experimental.set_memory_growth(physical_devices[0], True)
@@ -95,7 +90,7 @@ def main():
     args = parser.parse_args()
     assert os.path.isfile(args.model_path), "[ERROR] Model file does not exist!"
 
-    print("\n[INFO] To exit press X, so the dataset file gets saved correctly.")
+    print("\n[INFO] To exit press X.")
     print("[INFO] To go left press Q, to go right press E.\n")
     sleep(5)
     test_drive(args)
