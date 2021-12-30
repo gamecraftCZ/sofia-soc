@@ -34,7 +34,7 @@
 - Automatický test
     - `python simulator_drive_automatic_tests.py -m <CESTA_K_MODELU>`
 - Manuální test
-    - `python simulator_drive_manual-tests.py -m <CESTA_K_MODELU>`
+    - `python simulator_drive_manual_tests.py -m <CESTA_K_MODELU>`
 
 ![Video jízdy](sofia_drive-speed-arrows.gif)
 
@@ -90,7 +90,7 @@
 - Automatic test
     - `python simulator_drive_automatic_tests.py -m <PATH_TO_MODEL>`
 - Manual test
-    - `python simulator_drive_manual-tests.py -m <PATH_TO_MODEL>`
+    - `python simulator_drive_manual_tests.py -m <PATH_TO_MODEL>`
 
 ![Ride video](sofia_drive-speed-arrows.gif)
 
