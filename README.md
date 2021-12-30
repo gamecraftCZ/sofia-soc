@@ -1,4 +1,4 @@
-English version follows.
+*_English version follows._*
 
 # Sofie – neuronová síť inspirovaná háďátkem obecným a možnosti její kontroly
 
